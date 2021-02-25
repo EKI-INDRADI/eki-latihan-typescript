@@ -1,0 +1,110 @@
+4. Typescript Setup and Installation
+
+npm install -g typescript
+atau
+
+sudo npm install -g typescript
+
+--
+C:\Users\CRYPT\AppData\Roaming\npm\tsserver -> C:\Users\CRYPT\AppData\Roaming\npm\node_modules\typescript\bin\tsserver
+C:\Users\CRYPT\AppData\Roaming\npm\tsc -> C:\Users\CRYPT\AppData\Roaming\npm\node_modules\typescript\bin\tsc
++ typescript@4.1.5
+added 1 package from 1 contributor in 3.185s
+
+--
+
+tsc --version
+Version 4.1.5
+
+--
+
+
+npm init
+
+--
+class Helloworld {
+    constructor(message){
+        console.log(message);
+    }
+}
+
+const HelloWorld = new Helloworld('welcome to typescript');
+console.log(Helloworld);
+--
+
+
+typescript akan di compile menjadi javacript
+menggunakan perintah typescript
+
+tsc 1_app.ts
+selanjutnya
+node 1_app.js
+
+pakai bersamaan : 
+tsc 1_app.ts & node 1_app.js
+
+atau jika ingin lebih mudah
+npm install -g typescript
+npm install -g ts-node
+
+C:\Users\CRYPT\AppData\Roaming\npm\ts-node-script -> C:\Users\CRYPT\AppData\Roaming\npm\node_modules\ts-node\dist\bin-script.js
+C:\Users\CRYPT\AppData\Roaming\npm\ts-script -> C:\Users\CRYPT\AppData\Roaming\npm\node_modules\ts-node\dist\bin-script-deprecated.js
+C:\Users\CRYPT\AppData\Roaming\npm\ts-node -> C:\Users\CRYPT\AppData\Roaming\npm\node_modules\ts-node\dist\bin.js
+C:\Users\CRYPT\AppData\Roaming\npm\ts-node-transpile-only -> C:\Users\CRYPT\AppData\Roaming\npm\node_modules\ts-node\dist\bin-transpile.js
+npm WARN ts-node@9.1.1 requires a peer of typescript@>=2.7 but none is installed. You must install peer dependencies yourself.
+
+
+
+npm list -g --depth=0
+C:\Users\CRYPT\AppData\Roaming\npm
++-- @angular/cli@11.1.1
++-- @loopback/cli@2.19.0
++-- loopback-cli@5.1.0
++-- loopback-sdk-angular-cli@3.3.1
++-- nodemon@2.0.2
++-- ts-node@9.1.1
+`-- typescript@4.1.5
+
+npm ERR! peer dep missing: openapi-types@>=7, required by @apidevtools/swagger-parser@10.0.2
+
+
+ts-node app.ts  <<< pintah ini hanya berlaku pada saat develop bukan di production
+production harus tetap menggunakan tsc dan running node
+
+
+apabila 1 folder file ts dengan hasil compilenya (js) ketika jsnya dibuka pada visual studio code  file ts akan error ( sebenarnya tidak error abaikan saja)
+
+
+---- package.json
+
+{
+  "name": "typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
+
+
+---- / package.json
+
+
+
+---- package.json    cara run nya     npm run dev
+{
+  "name": "typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsc 1_app.ts & node 1_app.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
+
+---- / package.json
